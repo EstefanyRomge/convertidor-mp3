@@ -2,6 +2,19 @@ import streamlit as st
 import yt_dlp
 import os
 
+# --- SOLUCIÓN PARA QUE YT-DLP ENCUENTRE NODEJS EN LA NUBE ---
+try:
+    node_path = "/usr/bin/nodejs"
+    symlink_path = "/tmp/node"
+    if os.path.exists(node_path) and not os.path.exists(symlink_path):
+        os.symlink(node_path, symlink_path)
+        os.chmod(symlink_path, 0o755)
+    if "/tmp" not in os.environ["PATH"]:
+        os.environ["PATH"] = "/tmp:" + os.environ["PATH"]
+except Exception:
+    pass
+# -----------------------------------------------------------
+
 # Configuración de la página web
 st.set_page_config(page_title="Convertidor YouTube a MP3", page_icon="🎵", layout="centered")
 
@@ -38,13 +51,13 @@ st.markdown("<div style='text-align: center; color: gray; font-style: italic; ma
 col_izq, col_input, col_der = st.columns([0.08, 0.84, 0.08])
 
 with col_izq:
-    st.markdown('<div class="hand-anim-left">👉</div>', unsafe_allow_html=True)
+    st.markdown('<div class="hand-anim-left">👈</div>', unsafe_allow_html=True)
 
 with col_input:
     url = st.text_input("Pega el enlace de YouTube aquí:", placeholder="https://www.youtube.com/watch?v=...", label_visibility="collapsed")
 
 with col_der:
-    st.markdown('<div class="hand-anim-right">👈</div>', unsafe_allow_html=True)
+    st.markdown('<div class="hand-anim-right">👉</div>', unsafe_allow_html=True)
 
 # Botón de conversión
 if st.button("Convertir y Descargar MP3", type="primary"):
@@ -78,7 +91,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                             label="📥 Haz clic aquí para descargar tu MP3",
                             data=archivo,
                             file_name=os.path.basename(nombre_mp3),
-                            mime="audio/mp3"
+.                           mime="audio/mp3"
                         )
                 else:
                     st.error("No se pudo generar el archivo MP3.")
