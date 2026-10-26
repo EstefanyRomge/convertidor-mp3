@@ -1,0 +1,11 @@
+# Netscape HTTP Cookie File
+# https://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file! Do not edit.
+
+convertidor-mp3-para-papa.streamlit.app	FALSE	/	TRUE	0	streamlit_session	MTc5Mjk4NzA3MnxNcklGTkdiV3I2RlBmdkt3Y0FvQXRaX1ZMQW1oNUZmTngwdUlEOGxKdlhhSFJHdUxxdGs3bUZsNUxCRFUzc2c2eHRSa0NUcFdwcGhkd0VHRnYxWWptR0NxUUFVNWV6UVBDRklFVFB1UVlFX1FkREY1TkFIdUIwOS1VWDlSUkkzX3FGYy1yLVFpZ3lKMjREaVVkeXZtaFRxcWpSUmVldWVGWTV6VDNmbHFfZllDcTJucnNTWmlrcUhJRXc9PXwWgH-wMvu-55-hkecwaCbA-R4v24GCo5T-cWS6i1yAZQ==
+convertidor-mp3-para-papa.streamlit.app	FALSE	/	FALSE	1795666352	proxy-tracking-id	wsl7jrd5vth9iy73t3613zvmhw8nmnjo
+.convertidor-mp3-para-papa.streamlit.app	TRUE	/	FALSE	1827547952	_ga	GA1.3.2091011668.1792987098
+.convertidor-mp3-para-papa.streamlit.app	TRUE	/	FALSE	1793074352	_gid	GA1.3.1596988376.1792987098
+convertidor-mp3-para-papa.streamlit.app	FALSE	/	TRUE	1793030299	_streamlit_csrf	MTc5Mjk4NzA3NHxJbVF4YkU5V1JFSkZWbFpWZVUwd1drVlZWVkYzVlZoR05FMHphSEpOV0VKT1pFVlNjazVGZEdoWk1qZzlJZz09fCbXfQld9ylPo6A7x8-XtcPLIamN88ldkFt6mVTEXi5H
+convertidor-mp3-para-papa.streamlit.app	FALSE	/	FALSE	1824523120	ajs_anonymous_id	1ed52187-2d19-40d0-b822-841292b4b275
+convertidor-mp3-para-papa.streamlit.app	FALSE	/	TRUE	1824526695	_dd_s	aid=1943f352-270b-4321-8061-6038ac4328b9&logs=0&expire=1792991595076&rum=0
