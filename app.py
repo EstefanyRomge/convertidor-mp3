@@ -67,7 +67,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
         with st.spinner("Descargando y convirtiendo audio... Por favor espera."):
             try:
                 opciones = {
-                    'format': 'bv*+ba/b',  # Formato flexible para evitar fallos de formatos no disponibles
+                    'format': 'best',  # Selecciona el mejor formato disponible sin restricciones estrictas de streams
                     'noplaylist': True,
                     'postprocessors': [{
                         'key': 'FFmpegExtractAudio',
