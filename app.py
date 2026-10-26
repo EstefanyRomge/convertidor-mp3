@@ -91,7 +91,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                             label="📥 Haz clic aquí para descargar tu MP3",
                             data=archivo,
                             file_name=os.path.basename(nombre_mp3),
-.                           mime="audio/mp3"
+                          mime="audio/mp3"
                         )
                 else:
                     st.error("No se pudo generar el archivo MP3.")
