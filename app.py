@@ -55,7 +55,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
             try:
                 opciones = {
                     'format': 'bestaudio/best',
-                    'noplaylist': True,  # Evita que descargue listas de reproducción o elementos extras
+                    'noplaylist': True,
                     'postprocessors': [{
                         'key': 'FFmpegExtractAudio',
                         'preferredcodec': 'mp3',
@@ -63,6 +63,12 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     }],
                     'outtmpl': '%(title)s.%(ext)s',
                     'restrictfilenames': True,
+                    'nocheckcertificate': True,
+                    'ignoreerrors': False,
+                    'logtostderr': False,
+                    'quiet': True,
+                    'no_warnings': True,
+                    'geo_bypass': True,
                 }
                 
                 with yt_dlp.YoutubeDL(opciones) as ydl:
