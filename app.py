@@ -41,7 +41,7 @@ with col_izq:
     st.markdown('<div class="hand-anim-left">👉</div>', unsafe_allow_html=True)
 
 with col_input:
-    url = st.text_input("Pega el enlace de YouTube aquí:", placeholder="AQUÍ PEGUE LO QUE COPIO", label_visibility="collapsed")
+    url = st.text_input("Pega el enlace de YouTube aquí:", placeholder="https://www.youtube.com/watch?v=...", label_visibility="collapsed")
 
 with col_der:
     st.markdown('<div class="hand-anim-right">👈</div>', unsafe_allow_html=True)
@@ -63,6 +63,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     }],
                     'outtmpl': '%(title)s.%(ext)s',
                     'restrictfilenames': True,
+                    'cookiefile': 'cookies.txt',  # Autenticación con tus cookies para evitar el bloqueo 403
                     'extractor_args': {'youtube': {'player_client': ['mweb', 'android']}},
                 }
                 
