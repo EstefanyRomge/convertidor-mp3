@@ -67,7 +67,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
         with st.spinner("Descargando y convirtiendo audio... Por favor espera."):
             try:
                 opciones = {
-                    'format': 'bestaudio/best',
+                    'format': 'bv*+ba/b/best',  # Formato flexible para evitar restricciones de stream en la nube
                     'noplaylist': True,
                     'postprocessors': [{
                         'key': 'FFmpegExtractAudio',
@@ -77,7 +77,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     'outtmpl': '%(title)s.%(ext)s',
                     'restrictfilenames': True,
                     'js_interpreter': '/usr/bin/nodejs',
-                    'cookiefile': 'cookies.txt',  # Autenticación requerida para IPs de la nube
+                    'cookiefile': 'cookies.txt',  # Mantiene tu autenticación para evitar el bloqueo de bot
                     'extractor_args': {'youtube': {'player_client': ['web']}},
                 }
                 
