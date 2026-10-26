@@ -53,7 +53,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
     else:
         with st.spinner("Descargando y convirtiendo audio... Por favor espera."):
             try:
-                opciones = {
+               opciones = {
                     'format': 'bestaudio/best',
                     'noplaylist': True,
                     'postprocessors': [{
@@ -63,7 +63,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     }],
                     'outtmpl': '%(title)s.%(ext)s',
                     'restrictfilenames': True,
-                    'cookiefile': 'cookies.txt', # Usa tus cookies para evitar el bloqueo de bot
+                    'extractor_args': {'youtube': {'player_client': ['mweb', 'android']}},
                 }
                 
                 with yt_dlp.YoutubeDL(opciones) as ydl:
