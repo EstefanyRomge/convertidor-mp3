@@ -77,8 +77,8 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     'outtmpl': '%(title)s.%(ext)s',
                     'restrictfilenames': True,
                     'js_interpreter': '/usr/bin/nodejs',
-                    # Usar el cliente de TV para evitar la pantalla de verificación de bot
-                    'extractor_args': {'youtube': {'player_client': ['tv']}},
+                    'cookiefile': 'cookies.txt',  # Autenticación requerida para IPs de la nube
+                    'extractor_args': {'youtube': {'player_client': ['web']}},
                 }
                 
                 with yt_dlp.YoutubeDL(opciones) as ydl:
