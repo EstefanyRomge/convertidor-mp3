@@ -67,7 +67,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
         with st.spinner("Descargando y convirtiendo audio... Por favor espera."):
             try:
                 opciones = {
-                    'format': 'best',  # Selecciona el mejor formato disponible sin restricciones estrictas de streams
+                    'format': 'best/bestaudio',
                     'noplaylist': True,
                     'postprocessors': [{
                         'key': 'FFmpegExtractAudio',
@@ -78,6 +78,8 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     'restrictfilenames': True,
                     'cookiefile': 'cookies.txt',
                     'js_interpreter': '/usr/bin/nodejs',
+                    # Permitir clientes alternativos para sortear el bloqueo de formatos en la nube
+                    'extractor_args': {'youtube': {'player_client': ['web', 'tv']}},
                 }
                 
                 with yt_dlp.YoutubeDL(opciones) as ydl:
