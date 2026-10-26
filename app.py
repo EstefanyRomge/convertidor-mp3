@@ -2,7 +2,7 @@ import streamlit as st
 import yt_dlp
 import os
 
-# --- SOLUCIÓN PARA QUE YT-DLP ENCUENTRE NODEJS EN LA NUBE ---
+# --- SOLUCIÓN PARA QUE YT-DLP ENCUENTRE EL ENTORNO DE JAVASCRIPT ---
 try:
     node_path = "/usr/bin/nodejs"
     symlink_path = "/tmp/node"
@@ -13,7 +13,7 @@ try:
         os.environ["PATH"] = "/tmp:" + os.environ["PATH"]
 except Exception:
     pass
-# -----------------------------------------------------------
+# -----------------------------------------------------------------
 
 # Configuración de la página web
 st.set_page_config(page_title="Convertidor YouTube a MP3", page_icon="🎵", layout="centered")
@@ -91,7 +91,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                             label="📥 Haz clic aquí para descargar tu MP3",
                             data=archivo,
                             file_name=os.path.basename(nombre_mp3),
-                          mime="audio/mp3"
+                            mime="audio/mp3"
                         )
                 else:
                     st.error("No se pudo generar el archivo MP3.")
