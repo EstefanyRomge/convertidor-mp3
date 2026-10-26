@@ -53,7 +53,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
     else:
         with st.spinner("Descargando y convirtiendo audio... Por favor espera."):
             try:
-               opciones = {
+                opciones = {
                     'format': 'bestaudio/best',
                     'noplaylist': True,
                     'postprocessors': [{
