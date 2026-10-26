@@ -77,7 +77,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     'outtmpl': '%(title)s.%(ext)s',
                     'restrictfilenames': True,
                     'js_interpreter': '/usr/bin/nodejs',
-                    'extractor_args': {'youtube': {'player_client': ['mweb', 'web']}},
+                    'extractor_args': {'youtube': {'player_client': ['web', 'mediaconnect']}},
                 }
                 
                 with yt_dlp.YoutubeDL(opciones) as ydl:
