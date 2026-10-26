@@ -63,8 +63,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     }],
                     'outtmpl': '%(title)s.%(ext)s',
                     'restrictfilenames': True,
-                    'cookiefile': 'cookies.txt',  # Autenticación mediante tus cookies
-                    'extractor_args': {'youtube': {'player_client': ['android']}},
+                    'cookiefile': 'cookies.txt',  # Autenticación web mediante tus cookies
                 }
                 
                 with yt_dlp.YoutubeDL(opciones) as ydl:
