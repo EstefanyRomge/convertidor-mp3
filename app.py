@@ -77,8 +77,9 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     'outtmpl': '%(title)s.%(ext)s',
                     'restrictfilenames': True,
                     'cookiefile': 'cookies.txt',
-                    # Usar deno para superar el cifrado 'n challenge' y el protocolo SABR de YouTube
                     'js_interpreter': 'deno',
+                    # Habilitar los componentes remotos recomendados por yt-dlp para el solver EJS
+                    'remote_components': {'ejs': 'github'},
                     'extractor_args': {'youtube': {'player_client': ['web']}},
                 }
                 
