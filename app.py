@@ -67,7 +67,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
         with st.spinner("Descargando y convirtiendo audio... Por favor espera."):
             try:
                 opciones = {
-                    'format': 'best',  # Cambiar a 'best' genérico para evitar el bloqueo de streams protegidos
+                    'format': 'bestaudio/best',
                     'noplaylist': True,
                     'postprocessors': [{
                         'key': 'FFmpegExtractAudio',
@@ -76,9 +76,10 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     }],
                     'outtmpl': '%(title)s.%(ext)s',
                     'restrictfilenames': True,
-                    'js_interpreter': '/usr/bin/nodejs',
                     'cookiefile': 'cookies.txt',
-                    'extractor_args': {'youtube': {'player_client': ['web', 'mweb']}},
+                    # Usar deno para superar el cifrado 'n challenge' y el protocolo SABR de YouTube
+                    'js_interpreter': 'deno',
+                    'extractor_args': {'youtube': {'player_client': ['web']}},
                 }
                 
                 with yt_dlp.YoutubeDL(opciones) as ydl:
