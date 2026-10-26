@@ -63,7 +63,7 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     }],
                     'outtmpl': '%(title)s.%(ext)s',
                     'restrictfilenames': True,
-                    'extractor_args': {'youtube': {'player_client': ['android']}},
+                    'extractor_args': {'youtube': {'player_client': ['ios']}},
                 }
                 
                 with yt_dlp.YoutubeDL(opciones) as ydl:
