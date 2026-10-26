@@ -2,6 +2,19 @@ import streamlit as st
 import yt_dlp
 import os
 
+# --- PUENTE AUTOMÁTICO PARA QUE YT-DLP DETECTE NODEJS EN LA NUBE ---
+try:
+    node_path = "/usr/bin/nodejs"
+    symlink_path = "/tmp/node"
+    if os.path.exists(node_path) and not os.path.exists(symlink_path):
+        os.symlink(node_path, symlink_path)
+        os.chmod(symlink_path, 0o755)
+    if "/tmp" not in os.environ["PATH"]:
+        os.environ["PATH"] = "/tmp:" + os.environ["PATH"]
+except Exception:
+    pass
+# -----------------------------------------------------------------
+
 # Configuración de la página web
 st.set_page_config(page_title="Convertidor YouTube a MP3", page_icon="🎵", layout="centered")
 
@@ -64,7 +77,6 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     'outtmpl': '%(title)s.%(ext)s',
                     'restrictfilenames': True,
                     'cookiefile': 'cookies.txt',
-                    # Apuntar directamente a la ruta absoluta de Node.js instalada por packages.txt
                     'js_interpreter': '/usr/bin/nodejs',
                 }
                 
