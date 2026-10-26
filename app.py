@@ -78,8 +78,8 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     'restrictfilenames': True,
                     'cookiefile': 'cookies.txt',
                     'js_interpreter': 'deno',
-                    # Habilitar los componentes remotos recomendados por yt-dlp para el solver EJS
-                    'remote_components': {'ejs': 'github'},
+                    # Corregir la sintaxis para habilitar el componente remoto EJS
+                    'remote_components': {'ejs:github': True},
                     'extractor_args': {'youtube': {'player_client': ['web']}},
                 }
                 
