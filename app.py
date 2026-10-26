@@ -64,8 +64,8 @@ if st.button("Convertir y Descargar MP3", type="primary"):
                     'outtmpl': '%(title)s.%(ext)s',
                     'restrictfilenames': True,
                     'cookiefile': 'cookies.txt',
-                    # Forzar el uso explícito de nodejs para resolver los retos de YouTube
-                    'js_interpreter': 'nodejs',
+                    # Apuntar directamente a la ruta absoluta de Node.js instalada por packages.txt
+                    'js_interpreter': '/usr/bin/nodejs',
                 }
                 
                 with yt_dlp.YoutubeDL(opciones) as ydl:
